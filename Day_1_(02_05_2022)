@@ -1,0 +1,152 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "name": "Day 1 (02/05/2022)",
+      "provenance": [],
+      "authorship_tag": "ABX9TyOnIoyX86uFJMod6NX7us58"
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Print a list of all possible coordinates given by  on a 3D grid where the sum of  is not equal to . Here, . Please use list comprehensions rather than multiple loops, as a learning exercise."
+      ],
+      "metadata": {
+        "id": "GgDm2RZmtPMW"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "if __name__ == '__main__':\n",
+        "    x = int(input(\"x : \"))\n",
+        "    y = int(input(\"y : \"))\n",
+        "    z = int(input(\"z : \"))\n",
+        "    n = int(input(\"n : \"))\n",
+        "output = [];\n",
+        "abc = [];\n",
+        "for x in range(x+1):\n",
+        "    for y in range(y+1):\n",
+        "        for z in range(z+1):\n",
+        "            if x+y+z != n:\n",
+        "                abc = [x,y,z];\n",
+        "                output.append(abc);\n",
+        "print(output);\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "EXKRqp9BtN6_",
+        "outputId": "505f7ec4-3c7e-4e05-9702-a9510d810f51"
+      },
+      "execution_count": 26,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "x : 1\n",
+            "y : 3\n",
+            "z : 2\n",
+            "n : 4\n",
+            "[[0, 0, 0], [0, 0, 1], [0, 0, 2], [0, 1, 0], [0, 1, 1], [0, 1, 2], [0, 2, 0], [0, 2, 1], [0, 3, 0], [0, 3, 2], [1, 0, 0], [1, 0, 1], [1, 0, 2], [1, 1, 0], [1, 1, 1], [1, 2, 0], [1, 2, 2], [1, 3, 1], [1, 3, 2]]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "To Find Runner-Up Score From Given Series"
+      ],
+      "metadata": {
+        "id": "AIXcNr6kjmYk"
+      }
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 7,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "DBBYnWP_jbAl",
+        "outputId": "e564ad4f-df9e-4ea0-834a-5ec731e9a2b1"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter n : 5\n",
+            "2 3 6 6 5\n",
+            "5\n"
+          ]
+        }
+      ],
+      "source": [
+        "if __name__ == '__main__':\n",
+        "    n = int(input(\"Enter n : \"))\n",
+        "    arr = map(int, input().split())\n",
+        "    print(sorted(list(set(arr)))[-2])"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Finding-the-percentage"
+      ],
+      "metadata": {
+        "id": "dD1BlmeYme6j"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "if __name__ == '__main__':\n",
+        "    n = int(input())\n",
+        "    student_marks = {}\n",
+        "    for _ in range(n):\n",
+        "        name, *line = input().split()\n",
+        "        scores = list(map(float, line))\n",
+        "        student_marks[name] = scores\n",
+        "    query_name = input()\n",
+        "    output = list(student_marks[query_name])\n",
+        "    per = sum(output)/len(output);\n",
+        "    print(per,\"%\");"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "6uLou5l7qEs8",
+        "outputId": "82000697-8fd9-4d9b-e848-f6640b560c96"
+      },
+      "execution_count": 20,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "2\n",
+            "Arun 100 90 50 30 20\n",
+            "Kaven 100 50 25 35 40\n",
+            "Kaven\n",
+            "50.0 %\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
